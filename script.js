@@ -12,7 +12,8 @@ const students = [
   secondGrade: 10,
 },
 
-{  nome: "Mariela",
+{ 
+  nome: "Mariela",
   firstGrade: 9,
   secondGrade: 1,
 },
@@ -27,7 +28,7 @@ const students = [
   nome: "Tuga",
   firstGrade: 3,
   secondGrade: 2,
-},
+}
 ]
 
 
@@ -35,30 +36,28 @@ const students = [
 // A sua média, ${students[0].nome}, é ${(students[0].fistGrade + students[0].secondGrade) / 2}.`)
 
 
-
-function mediaFinal(firstGrade, secondGrade) {
-  return Number(((firstGrade + secondGrade) / 2))
-}
-
-if mediaFinal > 7 {
-  alert( 
-    `Caro(a) aluno(a) ${student.nome}, sua média final é ${mediaFinal(student.firstGrade, student.secondGrade)}. Parabéns, voce foi aprovado!`)
-}
-
-else {
-  alert( 
-    `Caro(a) aluno(a) ${student.nome}, sua média final é ${mediaFinal(student.firstGrade, student.secondGrade)}. Infelizmente você não foi aprovado!`)
-
-}
-
-// function printMedia(student) {
-//   return `
-//   Caro(a) aluno(a) ${student.nome}, sua média final é ${mediaFinal(student.firstGrade, student.secondGrade)}`
+// function mediaFinal(firstGrade, secondGrade) {
+//   return Number(((firstGrade + secondGrade) / 2))
 // }
+function mediaFinal(firstGrade, secondGrade) {  
 
+  return Number((firstGrade + secondGrade) / 2 )
+}
+ function printMedia(student) {
+     if (mediaFinal(student.firstGrade, student.secondGrade) > 7)  {
+    alert(  `
+     Caro(a) aluno(a) ${student.nome}, sua média final é ${mediaFinal(student.firstGrade, student.secondGrade)}. Parabéns!`)
+   }
+   else {
+     alert( `
+     Caro(a) aluno(a) ${student.nome}, sua média final é ${mediaFinal(student.firstGrade, student.secondGrade)}. Infelizmente você não foi aprovado!`)
+   }
+  }
+
+ 
 
 for (let student of students) {
-  let mediaFinalMessage = printMedia(student)
-  alert(mediaFinalMessage)
+ printMedia(student)
+ 
 }
 
